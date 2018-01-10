@@ -1,6 +1,6 @@
-const testApp = angular.module('testApp', []);
+const addressBook = angular.module('addressBook', []);
 
-testApp.controller('testController', ($scope, $http) => {
+addressBook.controller('testController', ($scope, $http) => {
     const baseUrl = 'http://localhost:5000/api/';
     $scope.users = [];
     $scope.user = {};
