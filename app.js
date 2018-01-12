@@ -1,1 +1,1 @@
-let addressBook = angular.module('addressBook', ['ngRoute', 'ngStorage']);
+let addressBook = angular.module('addressBook', ['ngRoute', 'ngStorage', 'angular-jwt']);

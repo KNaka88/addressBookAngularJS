@@ -72,5 +72,10 @@ addressBook.controller('loginController', ['$scope', '$http', 'authService', '$l
     }
 }]);
 
-addressBook.controller('mainController', ['$scope', function($scope) {
+addressBook.controller('mainController', ['$scope', 'authService', function($scope, authService) {
+    
+    $scope.checkLogin = function() {
+        var result = authService.isLoggedIn();
+        console.log(result);
+    }
 }]);
