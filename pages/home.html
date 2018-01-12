@@ -1,0 +1,15 @@
+<div>
+    <h2>REST API</h2>
+    <button ng-click="getUsers()">Get Users</button>
+
+    <ul>
+        <li ng-repeat="user in users">
+            <button ng-click="getUser(user.id)">Get {{ user.firstName }} {{ user.lastName }}</button>
+            <button ng-click="deleteUser(user.id)">Delete {{user.firstName}} {{user.lastName}}</button>
+        </li>     
+    </ul>        
+    <a href="#/login">Login</a>
+
+    <p>User id is {{user.id}}</p>
+    
+</div>
