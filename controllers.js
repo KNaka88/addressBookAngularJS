@@ -49,6 +49,28 @@ addressBook.controller('testController', function($scope, $http) {
     };
 });
 
-addressBook.controller('loginController', function($scope, $http) {
+addressBook.controller('loginController', ['$scope', '$http', 'authService', '$location', function($scope, $http, authService, $location) {
+    var baseUrl = 'http://localhost:5000/api/';
+    $scope.email = '';
+    $scope.password = '';
+    $scope.token;
 
-});
+    $scope.submit = function() {
+        authService.login($scope.email, $scope.password, function (isLoggedInSuccess) {
+            if (isLoggedInSuccess) {
+                $scope.clearForm();
+                $location.path('/main');
+            } else {
+                console.log("Email or Password is incorrect");
+            }
+        })
+    }
+
+    $scope.clearForm = function() {
+        $scope.email = '';
+        $scope.password = '';
+    }
+}]);
+
+addressBook.controller('mainController', ['$scope', function($scope) {
+}]);

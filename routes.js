@@ -8,4 +8,8 @@ addressBook.config(function($routeProvider) {
             templateUrl: 'pages/login.html',
             controller: 'loginController'
         })
+        .when('/main', {
+            templateUrl: 'pages/main.html',
+            controller: 'mainController'
+        })
 });
